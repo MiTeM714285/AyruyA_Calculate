@@ -1,6 +1,6 @@
 import tkinter as tk
+from functions import *
 from tkinter.ttk import *
-
 import tkinter.messagebox as msgbox
 
 class App(tk.Frame):
@@ -16,12 +16,12 @@ class App(tk.Frame):
     def create_widgets(self):
         game = tk.IntVar()
 
-        conditions_djmax = ['조건1', '조건2', '조건3', '조건4', '조건5',
-                            '조건6', '조건7', '조건8', '조건9', '조건10',
-                            '조건11', '조건12']
-        conditions_ez2on = ['조건1', '조건2', '조건3', '조건4', '조건5',
-                            '조건6', '조건7', '조건8', '조건9', '조건10',
-                            '조건11', '조건12']
+        conditions_djmax = ['1', '2', '3', '4', '5',
+                            '6', '7', '8', '9', '10',
+                            '11', '12']
+        conditions_ez2on = ['1', '2', '3', '4', '5',
+                            '6', '7', '8', '9', '10',
+                            '11', '12']
 
         def game_rad():
             if game.get() == 0:
@@ -124,33 +124,58 @@ class App(tk.Frame):
         self.radiobutton2 = tk.Radiobutton(self, text="EZ2ON", variable=game, value=1, command=game_rad)
 
         def djmax_calculation():
-            number_max100 = int(self.djmaxJudge01Entry.get())
-            number_max90 = int(self.djmaxJudge02Entry.get())
-            number_max80 = int(self.djmaxJudge03Entry.get())
-            number_max70 = int(self.djmaxJudge04Entry.get())
-            number_max60 = int(self.djmaxJudge05Entry.get())
-            number_max50 = int(self.djmaxJudge06Entry.get())
-            number_max40 = int(self.djmaxJudge07Entry.get())
-            number_max30 = int(self.djmaxJudge08Entry.get())
-            number_max20 = int(self.djmaxJudge09Entry.get())
-            number_max10 = int(self.djmaxJudge10Entry.get())
-            number_max1 = int(self.djmaxJudge11Entry.get())
-            number_break = int(self.djmaxJudge12Entry.get())
-            total_notes = (number_max100 + number_max90 + number_max80 + number_max70 + number_max60 + number_max50
-                           + number_max40 + number_max30 + number_max20 + number_max10 + number_max1 + number_break)
-            self.djmaxJudge01Entry.delete(0, "end")
-            self.djmaxJudge02Entry.delete(0, "end")
-            self.djmaxJudge03Entry.delete(0, "end")
-            self.djmaxJudge04Entry.delete(0, "end")
-            self.djmaxJudge05Entry.delete(0, "end")
-            self.djmaxJudge06Entry.delete(0, "end")
-            self.djmaxJudge07Entry.delete(0, "end")
-            self.djmaxJudge08Entry.delete(0, "end")
-            self.djmaxJudge09Entry.delete(0, "end")
-            self.djmaxJudge10Entry.delete(0, "end")
-            self.djmaxJudge11Entry.delete(0, "end")
-            self.djmaxJudge12Entry.delete(0, "end")
-            self.djmaxResult.config(text=total_notes)
+            if self.djmaxJudge01Entry.get().__eq__('') or self.djmaxJudge02Entry.get().__eq__('') or self.djmaxJudge03Entry.get().__eq__('') or self.djmaxJudge04Entry.get().__eq__('') or self.djmaxJudge05Entry.get().__eq__('') or self.djmaxJudge06Entry.get().__eq__('') or self.djmaxJudge07Entry.get().__eq__('') or self.djmaxJudge08Entry.get().__eq__('') or self.djmaxJudge09Entry.get().__eq__('') or self.djmaxJudge10Entry.get().__eq__('') or self.djmaxJudge11Entry.get().__eq__('') or self.djmaxJudge12Entry.get().__eq__('') or self.djmaxScoreEntry.get().__eq__('') or self.djmaxRateEntry01.get().__eq__('') or self.djmaxRateEntry02.get().__eq__('') or self.djmaxBestComboEntry.get().__eq__('') or self.djmaxComboBox.get().__eq__(''):
+                msgbox.showerror("오류","입력하지 않은 값이 있습니다.")
+            elif not self.djmaxJudge01Entry.get().isdigit() or not self.djmaxJudge02Entry.get().isdigit() or not self.djmaxJudge03Entry.get().isdigit() or not self.djmaxJudge04Entry.get().isdigit() or not self.djmaxJudge05Entry.get().isdigit() or not self.djmaxJudge06Entry.get().isdigit() or not self.djmaxJudge07Entry.get().isdigit() or not self.djmaxJudge08Entry.get().isdigit() or not self.djmaxJudge09Entry.get().isdigit() or not self.djmaxJudge10Entry.get().isdigit() or not self.djmaxJudge11Entry.get().isdigit() or not self.djmaxJudge12Entry.get().isdigit() or not self.djmaxScoreEntry.get().isdigit() or not self.djmaxRateEntry01.get().isdigit() or not self.djmaxRateEntry02.get().isdigit() or not self.djmaxBestComboEntry.get().isdigit() or not self.djmaxComboBox.get().isdigit():
+                msgbox.showerror("오류", "모든 값은 양의 정수로 입력해야 합니다.")
+            elif int(self.djmaxComboBox.get()) <= 0 or int(self.djmaxComboBox.get()) >= 13 :
+                msgbox.showerror("오류", "조건값은 1~12 사이여야 합니다.")
+            elif int(self.djmaxRateEntry01.get()) <= -1 or int(self.djmaxRateEntry01.get()) >= 101 :
+                msgbox.showerror("오류", "RATE값이 잘못되었습니다.")
+            elif int(self.djmaxRateEntry02.get()) <= -1 or int(self.djmaxRateEntry02.get()) >= 100 :
+                msgbox.showerror("오류", "RATE값이 잘못되었습니다.")
+            else:
+                number_max100 = int(self.djmaxJudge01Entry.get())
+                number_max90 = int(self.djmaxJudge02Entry.get())
+                number_max80 = int(self.djmaxJudge03Entry.get())
+                number_max70 = int(self.djmaxJudge04Entry.get())
+                number_max60 = int(self.djmaxJudge05Entry.get())
+                number_max50 = int(self.djmaxJudge06Entry.get())
+                number_max40 = int(self.djmaxJudge07Entry.get())
+                number_max30 = int(self.djmaxJudge08Entry.get())
+                number_max20 = int(self.djmaxJudge09Entry.get())
+                number_max10 = int(self.djmaxJudge10Entry.get())
+                number_max1 = int(self.djmaxJudge11Entry.get())
+                number_break = int(self.djmaxJudge12Entry.get())
+                number_score = int(self.djmaxScoreEntry.get())
+                number_rate1 = int(self.djmaxRateEntry01.get())
+                number_rate2 = int(self.djmaxRateEntry02.get())
+                number_best_combo = int(self.djmaxBestComboEntry.get())
+                number_condition = self.djmaxComboBox.get()
+                total_notes = (number_max100 + number_max90 + number_max80 + number_max70 + number_max60 + number_max50
+                               + number_max40 + number_max30 + number_max20 + number_max10 + number_max1 + number_break)
+                total_rate = number_rate1 + (number_rate2 / 100)
+                print(number_condition)
+                print(total_notes)
+                print(total_rate)
+                self.djmaxJudge01Entry.delete(0, "end")
+                self.djmaxJudge02Entry.delete(0, "end")
+                self.djmaxJudge03Entry.delete(0, "end")
+                self.djmaxJudge04Entry.delete(0, "end")
+                self.djmaxJudge05Entry.delete(0, "end")
+                self.djmaxJudge06Entry.delete(0, "end")
+                self.djmaxJudge07Entry.delete(0, "end")
+                self.djmaxJudge08Entry.delete(0, "end")
+                self.djmaxJudge09Entry.delete(0, "end")
+                self.djmaxJudge10Entry.delete(0, "end")
+                self.djmaxJudge11Entry.delete(0, "end")
+                self.djmaxJudge12Entry.delete(0, "end")
+                self.djmaxScoreEntry.delete(0, "end")
+                self.djmaxRateEntry01.delete(0, "end")
+                self.djmaxRateEntry02.delete(0, "end")
+                self.djmaxBestComboEntry.delete(0, "end")
+                self.djmaxComboBox.delete(0, "end")
+                self.djmaxResult.config(text=total_notes)
 
         self.djmaxJudge01 = tk.Label(self, text="MAX 100%")
         self.djmaxJudge02 = tk.Label(self, text="MAX 90%")
@@ -190,10 +215,16 @@ class App(tk.Frame):
         self.djmaxResult = tk.Label(self, text="결과 표시")
 
         def ez2on_calculation():
-            if self.ez2onJudge01Entry.get().__eq__('') or self.ez2onJudge02Entry.get().__eq__('') or self.ez2onJudge03Entry.get().__eq__('') or self.ez2onJudge04Entry.get().__eq__('') or self.ez2onJudge05Entry.get().__eq__('') or self.ez2onScoreEntry.get().__eq__('') or self.ez2onRateEntry01.get().__eq__('') or self.ez2onRateEntry02.get().__eq__('') or self.ez2onMaxComboEntry.get().__eq__(''):
+            if self.ez2onJudge01Entry.get().__eq__('') or self.ez2onJudge02Entry.get().__eq__('') or self.ez2onJudge03Entry.get().__eq__('') or self.ez2onJudge04Entry.get().__eq__('') or self.ez2onJudge05Entry.get().__eq__('') or self.ez2onJudgeFastEntry.get().__eq__('') or self.ez2onJudgeSlowEntry.get().__eq__('') or self.ez2onScoreEntry.get().__eq__('') or self.ez2onRateEntry01.get().__eq__('') or self.ez2onRateEntry02.get().__eq__('') or self.ez2onMaxComboEntry.get().__eq__('') or self.ez2onComboBox.get().__eq__(''):
                 msgbox.showerror("오류","입력하지 않은 값이 있습니다.")
-            elif not self.ez2onJudge01Entry.get().isdigit() or not self.ez2onJudge02Entry.get().isdigit() or not self.ez2onJudge03Entry.get().isdigit() or not self.ez2onJudge04Entry.get().isdigit() or not self.ez2onJudge05Entry.get().isdigit() or not self.ez2onScoreEntry.get().isdigit() or not self.ez2onRateEntry01.get().isdigit() or not self.ez2onRateEntry02.get().isdigit() or not self.ez2onMaxComboEntry.get().isdigit():
+            elif not self.ez2onJudge01Entry.get().isdigit() or not self.ez2onJudge02Entry.get().isdigit() or not self.ez2onJudge03Entry.get().isdigit() or not self.ez2onJudge04Entry.get().isdigit() or not self.ez2onJudge05Entry.get().isdigit() or not self.ez2onJudgeFastEntry.get().isdigit() or not self.ez2onJudgeSlowEntry.get().isdigit() or not self.ez2onScoreEntry.get().isdigit() or not self.ez2onRateEntry01.get().isdigit() or not self.ez2onRateEntry02.get().isdigit() or not self.ez2onMaxComboEntry.get().isdigit() or not self.ez2onComboBox.get().isdigit():
                 msgbox.showerror("오류", "모든 값은 양의 정수로 입력해야 합니다.")
+            elif int(self.ez2onComboBox.get()) <= 0 or int(self.ez2onComboBox.get()) >= 13 :
+                msgbox.showerror("오류", "조건값은 1~12 사이여야 합니다.")
+            elif int(self.ez2onRateEntry01.get()) <= -1 or int(self.ez2onRateEntry01.get()) >= 101 :
+                msgbox.showerror("오류", "RATE값이 잘못되었습니다.")
+            elif int(self.ez2onRateEntry02.get()) <= -1 or int(self.ez2onRateEntry02.get()) >= 100 :
+                msgbox.showerror("오류", "RATE값이 잘못되었습니다.")
             else:
                 number_kool = int(self.ez2onJudge01Entry.get())
                 number_cool = int(self.ez2onJudge02Entry.get())
@@ -201,20 +232,28 @@ class App(tk.Frame):
                 number_miss = int(self.ez2onJudge04Entry.get())
                 number_fail = int(self.ez2onJudge05Entry.get())
                 number_score = int(self.ez2onScoreEntry.get())
-                number_rate01 = int(self.ez2onRateEntry01.get())
-                number_rate02 = int(self.ez2onRateEntry02.get())
+                number_rate1 = int(self.ez2onRateEntry01.get())
+                number_rate2 = int(self.ez2onRateEntry02.get())
                 number_maxcombo = int(self.ez2onMaxComboEntry.get())
+                number_condition = self.ez2onComboBox.get()
                 total_notes = number_kool + number_cool + number_good + number_miss + number_fail
-                total_rate = number_rate01 + (number_rate02/100)
+                total_rate = number_rate1 + (number_rate2/100)
+
+                print(number_condition)
+                print(total_notes)
+                print(total_rate)
                 self.ez2onJudge01Entry.delete(0, "end")
                 self.ez2onJudge02Entry.delete(0, "end")
                 self.ez2onJudge03Entry.delete(0, "end")
                 self.ez2onJudge04Entry.delete(0, "end")
                 self.ez2onJudge05Entry.delete(0, "end")
+                self.ez2onJudgeFastEntry.delete(0, "end")
+                self.ez2onJudgeSlowEntry.delete(0, "end")
                 self.ez2onScoreEntry.delete(0, "end")
                 self.ez2onRateEntry01.delete(0, "end")
                 self.ez2onRateEntry02.delete(0, "end")
                 self.ez2onMaxComboEntry.delete(0, "end")
+                self.ez2onComboBox.delete(0, "end")
                 self.ez2onResult.config(text=total_rate)
                 self.ez2onJudge01Entry.icursor(1)
 
