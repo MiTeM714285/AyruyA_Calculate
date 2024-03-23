@@ -1,5 +1,6 @@
 import tkinter as tk
-from functions import *
+from functions_djmax import *
+from functions_ez2on import *
 from tkinter.ttk import *
 import tkinter.messagebox as msgbox
 
@@ -151,29 +152,36 @@ class App(tk.Frame):
                 number_rate1 = int(self.djmaxRateEntry01.get())
                 number_rate2 = int(self.djmaxRateEntry02.get())
                 number_best_combo = int(self.djmaxBestComboEntry.get())
-                number_condition = self.djmaxComboBox.get()
+                number_condition = int(self.djmaxComboBox.get())
                 total_notes = (number_max100 + number_max90 + number_max80 + number_max70 + number_max60 + number_max50
                                + number_max40 + number_max30 + number_max20 + number_max10 + number_max1 + number_break)
                 total_rate = number_rate1 + (number_rate2 / 100)
-                print(number_condition)
-                print(total_notes)
-                print(total_rate)
-                self.djmaxJudge01Entry.delete(0, "end")
-                self.djmaxJudge02Entry.delete(0, "end")
-                self.djmaxJudge03Entry.delete(0, "end")
-                self.djmaxJudge04Entry.delete(0, "end")
-                self.djmaxJudge05Entry.delete(0, "end")
-                self.djmaxJudge06Entry.delete(0, "end")
-                self.djmaxJudge07Entry.delete(0, "end")
-                self.djmaxJudge08Entry.delete(0, "end")
-                self.djmaxJudge09Entry.delete(0, "end")
-                self.djmaxJudge10Entry.delete(0, "end")
-                self.djmaxJudge11Entry.delete(0, "end")
-                self.djmaxJudge12Entry.delete(0, "end")
-                self.djmaxScoreEntry.delete(0, "end")
-                self.djmaxRateEntry01.delete(0, "end")
-                self.djmaxRateEntry02.delete(0, "end")
-                self.djmaxBestComboEntry.delete(0, "end")
+
+                if number_condition == 1:
+                    djmax_condition01()
+                elif number_condition == 2:
+                    djmax_condition02()
+                elif number_condition == 3:
+                    djmax_condition03()
+                elif number_condition == 4:
+                    djmax_condition04()
+                elif number_condition == 5:
+                    djmax_condition05()
+                elif number_condition == 6:
+                    djmax_condition06()
+                elif number_condition == 7:
+                    djmax_condition07()
+                elif number_condition == 8:
+                    djmax_condition08()
+                elif number_condition == 9:
+                    djmax_condition09()
+                elif number_condition == 10:
+                    djmax_condition10()
+                elif number_condition == 11:
+                    djmax_condition11()
+                elif number_condition == 12:
+                    djmax_condition12()
+
                 self.djmaxComboBox.delete(0, "end")
                 self.djmaxResult.config(text=total_notes)
 
@@ -235,27 +243,36 @@ class App(tk.Frame):
                 number_rate1 = int(self.ez2onRateEntry01.get())
                 number_rate2 = int(self.ez2onRateEntry02.get())
                 number_maxcombo = int(self.ez2onMaxComboEntry.get())
-                number_condition = self.ez2onComboBox.get()
+                number_condition = int(self.ez2onComboBox.get())
                 total_notes = number_kool + number_cool + number_good + number_miss + number_fail
                 total_rate = number_rate1 + (number_rate2/100)
 
-                print(number_condition)
-                print(total_notes)
-                print(total_rate)
-                self.ez2onJudge01Entry.delete(0, "end")
-                self.ez2onJudge02Entry.delete(0, "end")
-                self.ez2onJudge03Entry.delete(0, "end")
-                self.ez2onJudge04Entry.delete(0, "end")
-                self.ez2onJudge05Entry.delete(0, "end")
-                self.ez2onJudgeFastEntry.delete(0, "end")
-                self.ez2onJudgeSlowEntry.delete(0, "end")
-                self.ez2onScoreEntry.delete(0, "end")
-                self.ez2onRateEntry01.delete(0, "end")
-                self.ez2onRateEntry02.delete(0, "end")
-                self.ez2onMaxComboEntry.delete(0, "end")
+                if number_condition == 1:
+                    ez2on_condition01()
+                elif number_condition == 2:
+                    ez2on_condition02()
+                elif number_condition == 3:
+                    ez2on_condition03()
+                elif number_condition == 4:
+                    ez2on_condition04()
+                elif number_condition == 5:
+                    ez2on_condition05()
+                elif number_condition == 6:
+                    ez2on_condition06()
+                elif number_condition == 7:
+                    ez2on_condition07()
+                elif number_condition == 8:
+                    ez2on_condition08()
+                elif number_condition == 9:
+                    ez2on_condition09()
+                elif number_condition == 10:
+                    ez2on_condition10()
+                elif number_condition == 11:
+                    ez2on_condition11()
+                elif number_condition == 12:
+                    ez2on_condition12()
+
                 self.ez2onComboBox.delete(0, "end")
-                self.ez2onResult.config(text=total_rate)
-                self.ez2onJudge01Entry.icursor(1)
 
         self.ez2onJudge01 = tk.Label(self, text="KOOL")
         self.ez2onJudge02 = tk.Label(self, text="COOL")
