@@ -19,10 +19,10 @@ class App(tk.Frame):
 
         conditions_djmax = ['1', '2', '3', '4', '5',
                             '6', '7', '8', '9', '10',
-                            '11', '12']
+                            '11']
         conditions_ez2on = ['1', '2', '3', '4', '5',
                             '6', '7', '8', '9', '10',
-                            '11', '12']
+                            '11']
 
         def game_rad():
             if game.get() == 0:
@@ -38,7 +38,6 @@ class App(tk.Frame):
                 self.djmaxJudge10Entry.config(state="normal")
                 self.djmaxJudge11Entry.config(state="normal")
                 self.djmaxJudge12Entry.config(state="normal")
-                self.djmaxScoreEntry.config(state="normal")
                 self.djmaxRateEntry01.config(state="normal")
                 self.djmaxRateEntry02.config(state="normal")
                 self.djmaxBestComboEntry.config(state="normal")
@@ -58,8 +57,6 @@ class App(tk.Frame):
                 self.ez2onJudgeFastEntry.config(state="disabled")
                 self.ez2onJudgeSlowEntry.delete(0, "end")
                 self.ez2onJudgeSlowEntry.config(state="disabled")
-                self.ez2onScoreEntry.delete(0, "end")
-                self.ez2onScoreEntry.config(state="disabled")
                 self.ez2onRateEntry01.delete(0, "end")
                 self.ez2onRateEntry01.config(state="disabled")
                 self.ez2onRateEntry02.delete(0, "end")
@@ -95,8 +92,6 @@ class App(tk.Frame):
                 self.djmaxJudge11Entry.config(state="disabled")
                 self.djmaxJudge12Entry.delete(0, "end")
                 self.djmaxJudge12Entry.config(state="disabled")
-                self.djmaxScoreEntry.delete(0, "end")
-                self.djmaxScoreEntry.config(state="disabled")
                 self.djmaxRateEntry01.delete(0, "end")
                 self.djmaxRateEntry01.config(state="disabled")
                 self.djmaxRateEntry02.delete(0, "end")
@@ -113,7 +108,6 @@ class App(tk.Frame):
                 self.ez2onJudge05Entry.config(state="normal")
                 self.ez2onJudgeFastEntry.config(state="normal")
                 self.ez2onJudgeSlowEntry.config(state="normal")
-                self.ez2onScoreEntry.config(state="normal")
                 self.ez2onRateEntry01.config(state="normal")
                 self.ez2onRateEntry02.config(state="normal")
                 self.ez2onMaxComboEntry.config(state="normal")
@@ -125,9 +119,9 @@ class App(tk.Frame):
         self.radiobutton2 = tk.Radiobutton(self, text="EZ2ON", variable=game, value=1, command=game_rad)
 
         def djmax_calculation():
-            if self.djmaxJudge01Entry.get().__eq__('') or self.djmaxJudge02Entry.get().__eq__('') or self.djmaxJudge03Entry.get().__eq__('') or self.djmaxJudge04Entry.get().__eq__('') or self.djmaxJudge05Entry.get().__eq__('') or self.djmaxJudge06Entry.get().__eq__('') or self.djmaxJudge07Entry.get().__eq__('') or self.djmaxJudge08Entry.get().__eq__('') or self.djmaxJudge09Entry.get().__eq__('') or self.djmaxJudge10Entry.get().__eq__('') or self.djmaxJudge11Entry.get().__eq__('') or self.djmaxJudge12Entry.get().__eq__('') or self.djmaxScoreEntry.get().__eq__('') or self.djmaxRateEntry01.get().__eq__('') or self.djmaxRateEntry02.get().__eq__('') or self.djmaxBestComboEntry.get().__eq__('') or self.djmaxComboBox.get().__eq__(''):
+            if self.djmaxJudge01Entry.get().__eq__('') or self.djmaxJudge02Entry.get().__eq__('') or self.djmaxJudge03Entry.get().__eq__('') or self.djmaxJudge04Entry.get().__eq__('') or self.djmaxJudge05Entry.get().__eq__('') or self.djmaxJudge06Entry.get().__eq__('') or self.djmaxJudge07Entry.get().__eq__('') or self.djmaxJudge08Entry.get().__eq__('') or self.djmaxJudge09Entry.get().__eq__('') or self.djmaxJudge10Entry.get().__eq__('') or self.djmaxJudge11Entry.get().__eq__('') or self.djmaxJudge12Entry.get().__eq__('') or self.djmaxRateEntry01.get().__eq__('') or self.djmaxRateEntry02.get().__eq__('') or self.djmaxBestComboEntry.get().__eq__('') or self.djmaxComboBox.get().__eq__(''):
                 msgbox.showerror("오류","입력하지 않은 값이 있습니다.")
-            elif not self.djmaxJudge01Entry.get().isdigit() or not self.djmaxJudge02Entry.get().isdigit() or not self.djmaxJudge03Entry.get().isdigit() or not self.djmaxJudge04Entry.get().isdigit() or not self.djmaxJudge05Entry.get().isdigit() or not self.djmaxJudge06Entry.get().isdigit() or not self.djmaxJudge07Entry.get().isdigit() or not self.djmaxJudge08Entry.get().isdigit() or not self.djmaxJudge09Entry.get().isdigit() or not self.djmaxJudge10Entry.get().isdigit() or not self.djmaxJudge11Entry.get().isdigit() or not self.djmaxJudge12Entry.get().isdigit() or not self.djmaxScoreEntry.get().isdigit() or not self.djmaxRateEntry01.get().isdigit() or not self.djmaxRateEntry02.get().isdigit() or not self.djmaxBestComboEntry.get().isdigit() or not self.djmaxComboBox.get().isdigit():
+            elif not self.djmaxJudge01Entry.get().isdigit() or not self.djmaxJudge02Entry.get().isdigit() or not self.djmaxJudge03Entry.get().isdigit() or not self.djmaxJudge04Entry.get().isdigit() or not self.djmaxJudge05Entry.get().isdigit() or not self.djmaxJudge06Entry.get().isdigit() or not self.djmaxJudge07Entry.get().isdigit() or not self.djmaxJudge08Entry.get().isdigit() or not self.djmaxJudge09Entry.get().isdigit() or not self.djmaxJudge10Entry.get().isdigit() or not self.djmaxJudge11Entry.get().isdigit() or not self.djmaxJudge12Entry.get().isdigit() or not self.djmaxRateEntry01.get().isdigit() or not self.djmaxRateEntry02.get().isdigit() or not self.djmaxBestComboEntry.get().isdigit() or not self.djmaxComboBox.get().isdigit():
                 msgbox.showerror("오류", "모든 값은 양의 정수로 입력해야 합니다.")
             elif int(self.djmaxComboBox.get()) <= 0 or int(self.djmaxComboBox.get()) >= 13 :
                 msgbox.showerror("오류", "조건값은 1~12 사이여야 합니다.")
@@ -148,42 +142,55 @@ class App(tk.Frame):
                 number_max10 = int(self.djmaxJudge10Entry.get())
                 number_max1 = int(self.djmaxJudge11Entry.get())
                 number_break = int(self.djmaxJudge12Entry.get())
-                number_score = int(self.djmaxScoreEntry.get())
-                number_rate1 = int(self.djmaxRateEntry01.get())
-                number_rate2 = int(self.djmaxRateEntry02.get())
+                number_rate1 = self.djmaxRateEntry01.get()
+                number_rate2 = self.djmaxRateEntry02.get()
                 number_best_combo = int(self.djmaxBestComboEntry.get())
                 number_condition = int(self.djmaxComboBox.get())
-                total_notes = (number_max100 + number_max90 + number_max80 + number_max70 + number_max60 + number_max50
-                               + number_max40 + number_max30 + number_max20 + number_max10 + number_max1 + number_break)
-                total_rate = number_rate1 + (number_rate2 / 100)
 
                 if number_condition == 1:
-                    djmax_condition01()
+                    result = "백분율 : " + djmax_condition01(int(number_rate1), int(number_rate2)) + "%"
+                    self.djmaxResult.config(text=result)
                 elif number_condition == 2:
-                    djmax_condition02()
+                    result = "백분율 : " + djmax_condition02(number_max100, number_max90, number_max80, number_max70,
+                                                          number_max60, number_max50, number_max40, number_max30,
+                                                          number_max20, number_max10, number_max1, number_break,
+                                                          number_best_combo) + "%"
+                    self.djmaxResult.config(text=result)
                 elif number_condition == 3:
-                    djmax_condition03()
+                    result = "백분율 : " + djmax_condition03(number_max100, number_max90, number_max80, number_max70,
+                                                          number_max60, number_max50, number_max40, number_max30,
+                                                          number_max20, number_max10, number_max1, number_break,
+                                                          number_best_combo) + "%"
+                    self.djmaxResult.config(text=result)
                 elif number_condition == 4:
-                    djmax_condition04()
+                    result = "백분율 : " + djmax_condition04(number_max100, number_max90, number_max80, number_max70,
+                                                          number_max60, number_max50, number_max40, number_max30,
+                                                          number_max20, number_max10, number_max1, number_break,
+                                                          number_best_combo) + "%"
+                    self.djmaxResult.config(text=result)
                 elif number_condition == 5:
-                    djmax_condition05()
+                    result = "백분율 : " + djmax_condition05(number_break) + "%"
+                    self.djmaxResult.config(text=result)
                 elif number_condition == 6:
-                    djmax_condition06()
+                    result = "백분율 : " + djmax_condition06(number_break) + "%"
+                    self.djmaxResult.config(text=result)
                 elif number_condition == 7:
-                    djmax_condition07()
+                    result = "백분율 : " + djmax_condition07(number_rate1, number_rate2) + "%"
+                    self.djmaxResult.config(text=result)
                 elif number_condition == 8:
-                    djmax_condition08()
+                    result = "백분율 : " + djmax_condition08(number_rate1, number_rate2) + "%"
+                    self.djmaxResult.config(text=result)
                 elif number_condition == 9:
-                    djmax_condition09()
+                    result = "백분율 : " + djmax_condition09(number_max100, number_max90) + "%"
+                    self.djmaxResult.config(text=result)
                 elif number_condition == 10:
-                    djmax_condition10()
+                    result = "백분율 : 100%"
+                    self.djmaxResult.config(text=result)
                 elif number_condition == 11:
-                    djmax_condition11()
-                elif number_condition == 12:
-                    djmax_condition12()
+                    result = "백분율 : 0%"
+                    self.djmaxResult.config(text=result)
 
                 self.djmaxComboBox.delete(0, "end")
-                self.djmaxResult.config(text=total_notes)
 
         self.djmaxJudge01 = tk.Label(self, text="MAX 100%")
         self.djmaxJudge02 = tk.Label(self, text="MAX 90%")
@@ -197,7 +204,6 @@ class App(tk.Frame):
         self.djmaxJudge10 = tk.Label(self, text="MAX 10%")
         self.djmaxJudge11 = tk.Label(self, text="MAX 1%")
         self.djmaxJudge12 = tk.Label(self, text="BREAK")
-        self.djmaxScore = tk.Label(self, text="SCORE")
         self.djmaxRate = tk.Label(self, text="RATE(00.00)")
         self.djmaxBestCombo = tk.Label(self, text="BESTCOMBO")
         self.djmaxCondition = tk.Label(self, text="조건")
@@ -213,7 +219,6 @@ class App(tk.Frame):
         self.djmaxJudge10Entry = tk.Entry(self, justify="center")
         self.djmaxJudge11Entry = tk.Entry(self, justify="center")
         self.djmaxJudge12Entry = tk.Entry(self, justify="center")
-        self.djmaxScoreEntry = tk.Entry(self, justify="center")
         self.djmaxRateEntry01 = tk.Entry(self, justify="center", width=10)
         self.djmaxRateDot = tk.Label(self, text=".")
         self.djmaxRateEntry02 = tk.Entry(self, justify="center", width=10)
@@ -223,9 +228,9 @@ class App(tk.Frame):
         self.djmaxResult = tk.Label(self, text="결과 표시")
 
         def ez2on_calculation():
-            if self.ez2onJudge01Entry.get().__eq__('') or self.ez2onJudge02Entry.get().__eq__('') or self.ez2onJudge03Entry.get().__eq__('') or self.ez2onJudge04Entry.get().__eq__('') or self.ez2onJudge05Entry.get().__eq__('') or self.ez2onJudgeFastEntry.get().__eq__('') or self.ez2onJudgeSlowEntry.get().__eq__('') or self.ez2onScoreEntry.get().__eq__('') or self.ez2onRateEntry01.get().__eq__('') or self.ez2onRateEntry02.get().__eq__('') or self.ez2onMaxComboEntry.get().__eq__('') or self.ez2onComboBox.get().__eq__(''):
+            if self.ez2onJudge01Entry.get().__eq__('') or self.ez2onJudge02Entry.get().__eq__('') or self.ez2onJudge03Entry.get().__eq__('') or self.ez2onJudge04Entry.get().__eq__('') or self.ez2onJudge05Entry.get().__eq__('') or self.ez2onJudgeFastEntry.get().__eq__('') or self.ez2onJudgeSlowEntry.get().__eq__('') or self.ez2onRateEntry01.get().__eq__('') or self.ez2onRateEntry02.get().__eq__('') or self.ez2onMaxComboEntry.get().__eq__('') or self.ez2onComboBox.get().__eq__(''):
                 msgbox.showerror("오류","입력하지 않은 값이 있습니다.")
-            elif not self.ez2onJudge01Entry.get().isdigit() or not self.ez2onJudge02Entry.get().isdigit() or not self.ez2onJudge03Entry.get().isdigit() or not self.ez2onJudge04Entry.get().isdigit() or not self.ez2onJudge05Entry.get().isdigit() or not self.ez2onJudgeFastEntry.get().isdigit() or not self.ez2onJudgeSlowEntry.get().isdigit() or not self.ez2onScoreEntry.get().isdigit() or not self.ez2onRateEntry01.get().isdigit() or not self.ez2onRateEntry02.get().isdigit() or not self.ez2onMaxComboEntry.get().isdigit() or not self.ez2onComboBox.get().isdigit():
+            elif not self.ez2onJudge01Entry.get().isdigit() or not self.ez2onJudge02Entry.get().isdigit() or not self.ez2onJudge03Entry.get().isdigit() or not self.ez2onJudge04Entry.get().isdigit() or not self.ez2onJudge05Entry.get().isdigit() or not self.ez2onJudgeFastEntry.get().isdigit() or not self.ez2onJudgeSlowEntry.get().isdigit() or not self.ez2onRateEntry01.get().isdigit() or not self.ez2onRateEntry02.get().isdigit() or not self.ez2onMaxComboEntry.get().isdigit() or not self.ez2onComboBox.get().isdigit():
                 msgbox.showerror("오류", "모든 값은 양의 정수로 입력해야 합니다.")
             elif int(self.ez2onComboBox.get()) <= 0 or int(self.ez2onComboBox.get()) >= 13 :
                 msgbox.showerror("오류", "조건값은 1~12 사이여야 합니다.")
@@ -233,44 +238,56 @@ class App(tk.Frame):
                 msgbox.showerror("오류", "RATE값이 잘못되었습니다.")
             elif int(self.ez2onRateEntry02.get()) <= -1 or int(self.ez2onRateEntry02.get()) >= 100 :
                 msgbox.showerror("오류", "RATE값이 잘못되었습니다.")
+            elif int(self.ez2onMaxComboEntry.get()) > (int(self.ez2onJudge01Entry.get()) + int(self.ez2onJudge02Entry.get()) + int(self.ez2onJudge03Entry.get()) + int(self.ez2onJudge04Entry.get()) + int(self.ez2onJudge05Entry.get())):
+                msgbox.showerror("오류", "MAX COMBO값이 전체 노트수보다 큽니다.")
             else:
                 number_kool = int(self.ez2onJudge01Entry.get())
                 number_cool = int(self.ez2onJudge02Entry.get())
                 number_good = int(self.ez2onJudge03Entry.get())
                 number_miss = int(self.ez2onJudge04Entry.get())
                 number_fail = int(self.ez2onJudge05Entry.get())
-                number_score = int(self.ez2onScoreEntry.get())
-                number_rate1 = int(self.ez2onRateEntry01.get())
-                number_rate2 = int(self.ez2onRateEntry02.get())
+                number_rate1 = self.ez2onRateEntry01.get()
+                number_rate2 = self.ez2onRateEntry02.get()
                 number_maxcombo = int(self.ez2onMaxComboEntry.get())
                 number_condition = int(self.ez2onComboBox.get())
-                total_notes = number_kool + number_cool + number_good + number_miss + number_fail
-                total_rate = number_rate1 + (number_rate2/100)
+                number_fast = int(self.ez2onJudgeFastEntry.get())
+                number_slow = int(self.ez2onJudgeSlowEntry.get())
 
                 if number_condition == 1:
-                    ez2on_condition01()
+                    result = "백분율 : " + ez2on_condition01(number_maxcombo, number_kool, number_cool,
+                                                          number_good, number_miss, number_fail) + "%"
+                    self.ez2onResult.config(text=result)
                 elif number_condition == 2:
-                    ez2on_condition02()
+                    result = "백분율 : " + ez2on_condition02(number_maxcombo, number_kool, number_cool,
+                                                          number_good, number_miss, number_fail) + "%"
+                    self.ez2onResult.config(text=result)
                 elif number_condition == 3:
-                    ez2on_condition03()
+                    result = "백분율 : " + ez2on_condition03(number_kool, number_cool) + "%"
+                    self.ez2onResult.config(text=result)
                 elif number_condition == 4:
-                    ez2on_condition04()
+                    result = "백분율 : " + ez2on_condition04(number_cool, number_good) + "%"
+                    self.ez2onResult.config(text=result)
                 elif number_condition == 5:
-                    ez2on_condition05()
+                    result = "백분율 : " + ez2on_condition05(number_rate1, number_rate2) + "%"
+                    self.ez2onResult.config(text=result)
                 elif number_condition == 6:
-                    ez2on_condition06()
+                    result = "백분율 : " + ez2on_condition06(number_miss, number_fail) + "%"
+                    self.ez2onResult.config(text=result)
                 elif number_condition == 7:
-                    ez2on_condition07()
+                    result = "백분율 : " + ez2on_condition07(number_rate1, number_rate2) + "%"
+                    self.ez2onResult.config(text=result)
                 elif number_condition == 8:
-                    ez2on_condition08()
+                    result = "백분율 : " + ez2on_condition08(number_rate1, number_rate2) + "%"
+                    self.ez2onResult.config(text=result)
                 elif number_condition == 9:
-                    ez2on_condition09()
+                    result = "백분율 : " + ez2on_condition09(number_fast, number_slow) + "%"
+                    self.ez2onResult.config(text=result)
                 elif number_condition == 10:
-                    ez2on_condition10()
+                    result = "백분율 : 100%"
+                    self.ez2onResult.config(text=result)
                 elif number_condition == 11:
-                    ez2on_condition11()
-                elif number_condition == 12:
-                    ez2on_condition12()
+                    result = "백분율 : 0%"
+                    self.ez2onResult.config(text=result)
 
                 self.ez2onComboBox.delete(0, "end")
 
@@ -281,7 +298,6 @@ class App(tk.Frame):
         self.ez2onJudge05 = tk.Label(self, text="FAIL")
         self.ez2onJudgeFast = tk.Label(self, text="FAST")
         self.ez2onJudgeSlow = tk.Label(self, text="SLOW")
-        self.ez2onScore = tk.Label(self, text="SCORE")
         self.ez2onRate = tk.Label(self, text="RATE(00.00)")
         self.ez2onMaxCombo = tk.Label(self, text="MAXCOMBO")
         self.ez2onCondition = tk.Label(self, text="조건")
@@ -292,7 +308,6 @@ class App(tk.Frame):
         self.ez2onJudge05Entry = tk.Entry(self, justify="center")
         self.ez2onJudgeFastEntry = tk.Entry(self, justify="center")
         self.ez2onJudgeSlowEntry = tk.Entry(self, justify="center")
-        self.ez2onScoreEntry = tk.Entry(self, justify="center")
         self.ez2onRateEntry01 = tk.Entry(self, justify="center", width=10)
         self.ez2onRateDot = tk.Label(self, text=".")
         self.ez2onRateEntry02 = tk.Entry(self, justify="center", width=10)
@@ -331,16 +346,14 @@ class App(tk.Frame):
         self.djmaxJudge10Entry.grid(row=4, column=3, padx=15)
         self.djmaxJudge11Entry.grid(row=4, column=4, padx=15)
         self.djmaxJudge12Entry.grid(row=4, column=5, padx=15)
-        self.djmaxScore.grid(row=5, column=0)
         self.djmaxRate.grid(row=5, column=1)
         self.djmaxBestCombo.grid(row=5, column=2)
-        self.djmaxCondition.grid(row=5, column=4)
-        self.djmaxScoreEntry.grid(row=6, column=0)
+        self.djmaxCondition.grid(row=5, column=3, columnspan=2)
         self.djmaxRateEntry01.grid(row=6, column=1, sticky='w', padx=5)
         self.djmaxRateDot.grid(row=6, column=1)
         self.djmaxRateEntry02.grid(row=6, column=1, sticky='e', padx=5)
         self.djmaxBestComboEntry.grid(row=6, column=2)
-        self.djmaxComboBox.grid(row=6, column=3, columnspan=3, ipadx=130)
+        self.djmaxComboBox.grid(row=6, column=3, columnspan=2)
         self.djmaxCalculate.grid(row=7, column=2, pady=10, ipadx=30)
         self.djmaxResult.grid(row=7, column=3, pady=10)
 
@@ -358,16 +371,14 @@ class App(tk.Frame):
         self.ez2onJudgeSlow.grid(row=10, column=3, columnspan=2)
         self.ez2onJudgeFastEntry.grid(row=11, column=1, columnspan=2)
         self.ez2onJudgeSlowEntry.grid(row=11, column=3, columnspan=2)
-        self.ez2onScore.grid(row=12, column=0)
         self.ez2onRate.grid(row=12, column=1)
         self.ez2onMaxCombo.grid(row=12, column=2)
-        self.ez2onCondition.grid(row=12, column=4)
-        self.ez2onScoreEntry.grid(row=13, column=0, padx=15)
+        self.ez2onCondition.grid(row=12, column=3, columnspan=2)
         self.ez2onRateEntry01.grid(row=13, column=1, sticky='w', padx=5)
         self.ez2onRateDot.grid(row=13, column=1)
         self.ez2onRateEntry02.grid(row=13, column=1, sticky='e', padx=5)
         self.ez2onMaxComboEntry.grid(row=13, column=2, padx=15)
-        self.ez2onComboBox.grid(row=13, column=3, columnspan=3, ipadx=130)
+        self.ez2onComboBox.grid(row=13, column=3, columnspan=2)
         self.ez2onCalculate.grid(row=14, column=2, pady=10, ipadx=30)
         self.ez2onResult.grid(row=14, column=3, pady=10)
 
