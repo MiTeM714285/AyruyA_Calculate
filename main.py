@@ -3,6 +3,7 @@ from functions_djmax import *
 from functions_ez2on import *
 from tkinter.ttk import *
 import tkinter.messagebox as msgbox
+import clipboard
 
 class App(tk.Frame):
     def __init__(self, master=None):
@@ -148,47 +149,59 @@ class App(tk.Frame):
                 number_condition = int(self.djmaxComboBox.get())
 
                 if number_condition == 1:
-                    result = "백분율 : " + djmax_condition01(int(number_rate1), int(number_rate2)) + "%"
-                    self.djmaxResult.config(text=result)
+                    result = djmax_condition01(int(number_rate1), int(number_rate2))
+                    clipboard.copy(result)
+                    self.djmaxResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 2:
-                    result = "백분율 : " + djmax_condition02(number_max100, number_max90, number_max80, number_max70,
+                    result = djmax_condition02(number_max100, number_max90, number_max80, number_max70,
                                                           number_max60, number_max50, number_max40, number_max30,
                                                           number_max20, number_max10, number_max1, number_break,
-                                                          number_best_combo) + "%"
-                    self.djmaxResult.config(text=result)
+                                                          number_best_combo)
+                    clipboard.copy(result)
+                    self.djmaxResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 3:
-                    result = "백분율 : " + djmax_condition03(number_max100, number_max90, number_max80, number_max70,
+                    result = djmax_condition03(number_max100, number_max90, number_max80, number_max70,
                                                           number_max60, number_max50, number_max40, number_max30,
                                                           number_max20, number_max10, number_max1, number_break,
-                                                          number_best_combo) + "%"
-                    self.djmaxResult.config(text=result)
+                                                          number_best_combo)
+                    clipboard.copy(result)
+                    self.djmaxResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 4:
-                    result = "백분율 : " + djmax_condition04(number_max100, number_max90, number_max80, number_max70,
+                    result = djmax_condition04(number_max100, number_max90, number_max80, number_max70,
                                                           number_max60, number_max50, number_max40, number_max30,
                                                           number_max20, number_max10, number_max1, number_break,
-                                                          number_best_combo) + "%"
-                    self.djmaxResult.config(text=result)
+                                                          number_best_combo)
+                    clipboard.copy(result)
+                    self.djmaxResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 5:
-                    result = "백분율 : " + djmax_condition05(number_break) + "%"
-                    self.djmaxResult.config(text=result)
+                    result = djmax_condition05(number_break)
+                    clipboard.copy(result)
+                    self.djmaxResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 6:
-                    result = "백분율 : " + djmax_condition06(number_break) + "%"
-                    self.djmaxResult.config(text=result)
+                    result = djmax_condition06(number_break)
+                    clipboard.copy(result)
+                    self.djmaxResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 7:
-                    result = "백분율 : " + djmax_condition07(number_rate1, number_rate2) + "%"
-                    self.djmaxResult.config(text=result)
+                    result = djmax_condition07(number_rate1, number_rate2)
+                    clipboard.copy(result)
+                    self.djmaxResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 8:
-                    result = "백분율 : " + djmax_condition08(number_rate1, number_rate2) + "%"
-                    self.djmaxResult.config(text=result)
+                    result = djmax_condition08(number_rate1, number_rate2)
+                    clipboard.copy(result)
+                    self.djmaxResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 9:
-                    result = "백분율 : " + djmax_condition09(number_max100, number_max90) + "%"
-                    self.djmaxResult.config(text=result)
+                    result = djmax_condition09(number_max100, number_max90)
+                    clipboard.copy(result)
+                    self.djmaxResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 10:
-                    result = "백분율 : 100%"
-                    self.djmaxResult.config(text=result)
+                    result = "100"
+                    clipboard.copy(result)
+                    self.djmaxResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 11:
-                    result = "백분율 : 0%"
-                    self.djmaxResult.config(text=result)
+                    result = "0"
+                    clipboard.copy(result)
+                    self.djmaxResult.config(text="백분율 : " + result + "%")
+
 
                 self.djmaxComboBox.delete(0, "end")
 
@@ -254,40 +267,51 @@ class App(tk.Frame):
                 number_slow = int(self.ez2onJudgeSlowEntry.get())
 
                 if number_condition == 1:
-                    result = "백분율 : " + ez2on_condition01(number_maxcombo, number_kool, number_cool,
-                                                          number_good, number_miss, number_fail) + "%"
-                    self.ez2onResult.config(text=result)
+                    result = ez2on_condition01(number_maxcombo, number_kool, number_cool,
+                                                          number_good, number_miss, number_fail)
+                    clipboard.copy(result)
+                    self.ez2onResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 2:
-                    result = "백분율 : " + ez2on_condition02(number_maxcombo, number_kool, number_cool,
-                                                          number_good, number_miss, number_fail) + "%"
-                    self.ez2onResult.config(text=result)
+                    result = ez2on_condition02(number_maxcombo, number_kool, number_cool,
+                                                          number_good, number_miss, number_fail)
+                    clipboard.copy(result)
+                    self.ez2onResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 3:
-                    result = "백분율 : " + ez2on_condition03(number_kool, number_cool) + "%"
-                    self.ez2onResult.config(text=result)
+                    result = ez2on_condition03(number_kool, number_cool)
+                    clipboard.copy(result)
+                    self.ez2onResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 4:
-                    result = "백분율 : " + ez2on_condition04(number_cool, number_good) + "%"
-                    self.ez2onResult.config(text=result)
+                    result = ez2on_condition04(number_cool, number_good)
+                    clipboard.copy(result)
+                    self.ez2onResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 5:
-                    result = "백분율 : " + ez2on_condition05(number_rate1, number_rate2) + "%"
-                    self.ez2onResult.config(text=result)
+                    result = ez2on_condition05(number_rate1, number_rate2)
+                    clipboard.copy(result)
+                    self.ez2onResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 6:
-                    result = "백분율 : " + ez2on_condition06(number_miss, number_fail) + "%"
-                    self.ez2onResult.config(text=result)
+                    result = ez2on_condition06(number_miss, number_fail)
+                    clipboard.copy(result)
+                    self.ez2onResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 7:
-                    result = "백분율 : " + ez2on_condition07(number_rate1, number_rate2) + "%"
-                    self.ez2onResult.config(text=result)
+                    result = ez2on_condition07(number_rate1, number_rate2)
+                    clipboard.copy(result)
+                    self.ez2onResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 8:
-                    result = "백분율 : " + ez2on_condition08(number_rate1, number_rate2) + "%"
-                    self.ez2onResult.config(text=result)
+                    result = ez2on_condition08(number_rate1, number_rate2)
+                    clipboard.copy(result)
+                    self.ez2onResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 9:
-                    result = "백분율 : " + ez2on_condition09(number_fast, number_slow) + "%"
-                    self.ez2onResult.config(text=result)
+                    result = ez2on_condition09(number_fast, number_slow)
+                    clipboard.copy(result)
+                    self.ez2onResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 10:
-                    result = "백분율 : 100%"
-                    self.ez2onResult.config(text=result)
+                    result = "100"
+                    clipboard.copy(result)
+                    self.ez2onResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 11:
-                    result = "백분율 : 0%"
-                    self.ez2onResult.config(text=result)
+                    result = "0"
+                    clipboard.copy(result)
+                    self.ez2onResult.config(text="백분율 : " + result + "%")
 
                 self.ez2onComboBox.delete(0, "end")
 
@@ -356,7 +380,7 @@ class App(tk.Frame):
         self.djmaxComboBox.grid(row=6, column=3, columnspan=2)
         self.djmaxCalculate.grid(row=7, column=2, pady=10, ipadx=30)
         self.djmaxResult.grid(row=7, column=3, pady=10)
-
+        self.djmaxCalculate.grid(row=7, column=4, pady=10, ipadx=30)
         self.ez2onJudge01.grid(row=8, column=0, columnspan=2)
         self.ez2onJudge02.grid(row=8, column=1, columnspan=2)
         self.ez2onJudge03.grid(row=8, column=2, columnspan=2)
