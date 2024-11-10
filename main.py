@@ -150,6 +150,7 @@ class App(tk.Frame):
                 number_rate1 = self.djmaxRateEntry01.get()
                 number_rate2 = self.djmaxRateEntry02.get()
                 number_best_combo = int(self.djmaxBestComboEntry.get())
+                number_keymode = int(self.djmaxKeymodeComboBox.get())
                 number_condition = int(self.djmaxConditionComboBox.get())
 
                 if number_condition == 1:
@@ -270,6 +271,7 @@ class App(tk.Frame):
                 number_rate1 = self.ez2onRateEntry01.get()
                 number_rate2 = self.ez2onRateEntry02.get()
                 number_maxcombo = int(self.ez2onMaxComboEntry.get())
+                number_keymode = int(self.ez2onKeymodeComboBox.get())
                 number_condition = int(self.ez2onConditionComboBox.get())
                 number_fast = int(self.ez2onJudgeFastEntry.get())
                 number_slow = int(self.ez2onJudgeSlowEntry.get())

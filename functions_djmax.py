@@ -1,5 +1,5 @@
 def djmax_condition01(number_rate1, number_rate2):
-    total_rate = format(number_rate1 + (number_rate2 / 100), ".4f")
+    total_rate = format((number_rate1 + (number_rate2 / 100)) - 20, ".4f")
     return total_rate
 
 
