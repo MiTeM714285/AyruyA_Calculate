@@ -174,7 +174,7 @@ class App(tk.Frame):
                     clipboard.copy(result)
                     self.djmaxResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 6:
-                    result = djmax_condition06(number_break)
+                    result = djmax_condition06(number_break, number_max90)
                     clipboard.copy(result)
                     self.djmaxResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 7:

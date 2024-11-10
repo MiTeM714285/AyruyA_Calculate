@@ -55,29 +55,15 @@ def djmax_condition05(number_break):
         return '100.0000'
 
 
-def djmax_condition06(number_break):
-    if number_break == 0:
-        return '100.0000'
-    elif number_break == 1:
-        return '90.0000'
-    elif number_break == 2:
-        return '80.0000'
-    elif number_break == 3:
-        return '70.0000'
-    elif number_break == 4:
-        return '60.0000'
-    elif number_break == 5:
-        return '50.0000'
-    elif number_break == 6:
-        return '40.0000'
-    elif number_break == 7:
-        return '30.0000'
-    elif number_break == 8:
-        return '20.0000'
-    elif number_break == 9:
-        return '10.0000'
-    elif number_break >= 10:
+def djmax_condition06(number_break, number_max90):
+    if number_break >= 10:
         return '0.0000'
+    else:
+        result = number_break * number_max90
+        if result >= 100:
+            return '100.0000'
+        else:
+            return format(result, ".4f")
 
 
 def djmax_condition07(number_rate1, number_rate2):
