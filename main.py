@@ -162,10 +162,7 @@ class App(tk.Frame):
                     clipboard.copy(result)
                     self.djmaxResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 3:
-                    result = djmax_condition03(number_max100, number_max90, number_max80, number_max70,
-                                                          number_max60, number_max50, number_max40, number_max30,
-                                                          number_max20, number_max10, number_max1, number_break,
-                                                          number_best_combo)
+                    result = djmax_condition03(number_rate1, number_rate2)
                     clipboard.copy(result)
                     self.djmaxResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 4:

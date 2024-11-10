@@ -22,16 +22,27 @@ def djmax_condition02(number_rate1, number_rate2):
     else:
         return '25.0000'
 
-def djmax_condition03(number_max100, number_max90, number_max80, number_max70, number_max60, number_max50, number_max40,
-                      number_max30, number_max20, number_max10, number_max1, number_break, number_best_combo):
-    total_notes = (number_max100 + number_max90 + number_max80 + number_max70 + number_max60 + number_max50
-                   + number_max40 + number_max30 + number_max20 + number_max10 + number_max1 + number_break)
-    total_notes_multiple = round(total_notes * 3)
-    if number_best_combo >= total_notes_multiple:
-        return '100.0000'
+def djmax_condition03(number_rate1, number_rate2):
+    total_rate = number_rate1 + number_rate2
+    count = {}
+    for i in total_rate:
+        try:
+            count[i] += 1
+        except:
+            count[i] = 1
+    print(count)
+    collection_count = 5 - int(count.get(max(count, key=count.get)))
+    if total_rate == '10000':
+        return '50.0000'
     else:
-        return format(((number_best_combo / total_notes_multiple) * 100), ".4f")
-
+        if collection_count == 4:
+            return '100.0000'
+        elif collection_count == 3:
+            return '75.0000'
+        elif collection_count == 2:
+            return '50.0000'
+        else:
+            return '25.0000'
 
 def djmax_condition04(number_max100, number_max90, number_max80, number_max70, number_max60, number_max50, number_max40,
                       number_max30, number_max20, number_max10, number_max1, number_break, number_best_combo):
