@@ -1,22 +1,28 @@
 def ez2on_condition01(number_maxcombo, number_kool, number_cool, number_good, number_miss, number_fail):
     total_notes = number_kool + number_cool + number_good + number_miss + number_fail
-    objective_notes = round(total_notes * 0.8)
+    objective_notes = total_notes * 0.8
+
     if number_maxcombo == 0:
         return '0.0000'
     elif number_maxcombo <= objective_notes:
         return format((number_maxcombo / objective_notes) * 100, ".4f")
     else:
-        return format(((objective_notes - abs(number_maxcombo-objective_notes)) / objective_notes) * 100, ".4f")
+        subject = int((number_maxcombo - 2*(abs(number_maxcombo-objective_notes))))
+        return format((subject / objective_notes) * 100, ".4f")
+
 
 def ez2on_condition02(number_maxcombo, number_kool, number_cool, number_good, number_miss, number_fail):
     total_notes = number_kool + number_cool + number_good + number_miss + number_fail
-    objective_notes = round(total_notes * 0.5)
+    objective_notes = total_notes * 0.5
+
     if number_maxcombo == 0:
         return '0.0000'
     elif number_maxcombo <= objective_notes:
         return format((number_maxcombo / objective_notes) * 100, ".4f")
     else:
-        return format(((objective_notes - abs(number_maxcombo-objective_notes)) / objective_notes) * 100, ".4f")
+        subject = int((number_maxcombo - 2*(abs(number_maxcombo-objective_notes))))
+        return format((subject / objective_notes) * 100, ".4f")
+
 
 def ez2on_condition03(number_kool, number_cool):
     difference = abs(number_kool - number_cool)
