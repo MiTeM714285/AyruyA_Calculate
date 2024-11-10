@@ -122,12 +122,14 @@ class App(tk.Frame):
         self.radiobutton2 = tk.Radiobutton(self, text="EZ2ON", variable=game, value=1, command=game_rad)
 
         def djmax_calculation():
-            if self.djmaxJudge01Entry.get().__eq__('') or self.djmaxJudge02Entry.get().__eq__('') or self.djmaxJudge03Entry.get().__eq__('') or self.djmaxJudge04Entry.get().__eq__('') or self.djmaxJudge05Entry.get().__eq__('') or self.djmaxJudge06Entry.get().__eq__('') or self.djmaxJudge07Entry.get().__eq__('') or self.djmaxJudge08Entry.get().__eq__('') or self.djmaxJudge09Entry.get().__eq__('') or self.djmaxJudge10Entry.get().__eq__('') or self.djmaxJudge11Entry.get().__eq__('') or self.djmaxJudge12Entry.get().__eq__('') or self.djmaxRateEntry01.get().__eq__('') or self.djmaxRateEntry02.get().__eq__('') or self.djmaxBestComboEntry.get().__eq__('') or self.djmaxConditionComboBox.get().__eq__(''):
+            if self.djmaxJudge01Entry.get().__eq__('') or self.djmaxJudge02Entry.get().__eq__('') or self.djmaxJudge03Entry.get().__eq__('') or self.djmaxJudge04Entry.get().__eq__('') or self.djmaxJudge05Entry.get().__eq__('') or self.djmaxJudge06Entry.get().__eq__('') or self.djmaxJudge07Entry.get().__eq__('') or self.djmaxJudge08Entry.get().__eq__('') or self.djmaxJudge09Entry.get().__eq__('') or self.djmaxJudge10Entry.get().__eq__('') or self.djmaxJudge11Entry.get().__eq__('') or self.djmaxJudge12Entry.get().__eq__('') or self.djmaxRateEntry01.get().__eq__('') or self.djmaxRateEntry02.get().__eq__('') or self.djmaxBestComboEntry.get().__eq__('') or self.djmaxKeymodeComboBox.get().__eq__('') or self.djmaxConditionComboBox.get().__eq__(''):
                 msgbox.showerror("오류","입력하지 않은 값이 있습니다.")
-            elif not self.djmaxJudge01Entry.get().isdigit() or not self.djmaxJudge02Entry.get().isdigit() or not self.djmaxJudge03Entry.get().isdigit() or not self.djmaxJudge04Entry.get().isdigit() or not self.djmaxJudge05Entry.get().isdigit() or not self.djmaxJudge06Entry.get().isdigit() or not self.djmaxJudge07Entry.get().isdigit() or not self.djmaxJudge08Entry.get().isdigit() or not self.djmaxJudge09Entry.get().isdigit() or not self.djmaxJudge10Entry.get().isdigit() or not self.djmaxJudge11Entry.get().isdigit() or not self.djmaxJudge12Entry.get().isdigit() or not self.djmaxRateEntry01.get().isdigit() or not self.djmaxRateEntry02.get().isdigit() or not self.djmaxBestComboEntry.get().isdigit() or not self.djmaxConditionComboBox.get().isdigit():
+            elif not self.djmaxJudge01Entry.get().isdigit() or not self.djmaxJudge02Entry.get().isdigit() or not self.djmaxJudge03Entry.get().isdigit() or not self.djmaxJudge04Entry.get().isdigit() or not self.djmaxJudge05Entry.get().isdigit() or not self.djmaxJudge06Entry.get().isdigit() or not self.djmaxJudge07Entry.get().isdigit() or not self.djmaxJudge08Entry.get().isdigit() or not self.djmaxJudge09Entry.get().isdigit() or not self.djmaxJudge10Entry.get().isdigit() or not self.djmaxJudge11Entry.get().isdigit() or not self.djmaxJudge12Entry.get().isdigit() or not self.djmaxRateEntry01.get().isdigit() or not self.djmaxRateEntry02.get().isdigit() or not self.djmaxBestComboEntry.get().isdigit() or not self.djmaxKeymodeComboBox.get().isdigit() or not self.djmaxConditionComboBox.get().isdigit():
                 msgbox.showerror("오류", "모든 값은 양의 정수로 입력해야 합니다.")
-            elif int(self.djmaxConditionComboBox.get()) <= 0 or int(self.djmaxConditionComboBox.get()) >= 13 :
-                msgbox.showerror("오류", "조건값은 1~12 사이여야 합니다.")
+            elif int(self.djmaxKeymodeComboBox.get()) <= 3 or int(self.djmaxKeymodeComboBox.get()) >= 9 or int(self.djmaxKeymodeComboBox.get()) == 7:
+                msgbox.showerror("오류", "키모드는 4,5,6 또는 8키여야 합니다.")
+            elif int(self.djmaxConditionComboBox.get()) <= 0 or int(self.djmaxConditionComboBox.get()) >= 12 :
+                msgbox.showerror("오류", "조건값은 1~11 사이여야 합니다.")
             elif int(self.djmaxRateEntry01.get()) <= -1 or int(self.djmaxRateEntry01.get()) >= 101 :
                 msgbox.showerror("오류", "RATE값이 잘못되었습니다.")
             elif int(self.djmaxRateEntry02.get()) <= -1 or int(self.djmaxRateEntry02.get()) >= 100 :
@@ -245,12 +247,14 @@ class App(tk.Frame):
         self.djmaxResult = tk.Label(self, text="결과 표시")
 
         def ez2on_calculation():
-            if self.ez2onJudge01Entry.get().__eq__('') or self.ez2onJudge02Entry.get().__eq__('') or self.ez2onJudge03Entry.get().__eq__('') or self.ez2onJudge04Entry.get().__eq__('') or self.ez2onJudge05Entry.get().__eq__('') or self.ez2onRateEntry01.get().__eq__('') or self.ez2onRateEntry02.get().__eq__('') or self.ez2onMaxComboEntry.get().__eq__('') or self.ez2onConditionComboBox.get().__eq__(''):
+            if self.ez2onJudge01Entry.get().__eq__('') or self.ez2onJudge02Entry.get().__eq__('') or self.ez2onJudge03Entry.get().__eq__('') or self.ez2onJudge04Entry.get().__eq__('') or self.ez2onJudge05Entry.get().__eq__('') or self.ez2onRateEntry01.get().__eq__('') or self.ez2onRateEntry02.get().__eq__('') or self.ez2onMaxComboEntry.get().__eq__('') or self.ez2onKeymodeComboBox.get().__eq__('') or self.ez2onConditionComboBox.get().__eq__(''):
                 msgbox.showerror("오류","입력하지 않은 값이 있습니다.")
-            elif not self.ez2onJudge01Entry.get().isdigit() or not self.ez2onJudge02Entry.get().isdigit() or not self.ez2onJudge03Entry.get().isdigit() or not self.ez2onJudge04Entry.get().isdigit() or not self.ez2onJudge05Entry.get().isdigit() or not self.ez2onRateEntry01.get().isdigit() or not self.ez2onRateEntry02.get().isdigit() or not self.ez2onMaxComboEntry.get().isdigit() or not self.ez2onConditionComboBox.get().isdigit():
+            elif not self.ez2onJudge01Entry.get().isdigit() or not self.ez2onJudge02Entry.get().isdigit() or not self.ez2onJudge03Entry.get().isdigit() or not self.ez2onJudge04Entry.get().isdigit() or not self.ez2onJudge05Entry.get().isdigit() or not self.ez2onRateEntry01.get().isdigit() or not self.ez2onRateEntry02.get().isdigit() or not self.ez2onMaxComboEntry.get().isdigit() or not self.ez2onKeymodeComboBox.get().isdigit() or not self.ez2onConditionComboBox.get().isdigit():
                 msgbox.showerror("오류", "모든 값은 양의 정수로 입력해야 합니다.")
-            elif int(self.ez2onConditionComboBox.get()) <= 0 or int(self.ez2onConditionComboBox.get()) >= 13 :
-                msgbox.showerror("오류", "조건값은 1~12 사이여야 합니다.")
+            elif int(self.ez2onKeymodeComboBox.get()) <= 3 or int(self.ez2onKeymodeComboBox.get()) >= 9 or int(self.ez2onKeymodeComboBox.get()) == 7:
+                msgbox.showerror("오류", "키모드는 4,5,6 또는 8키여야 합니다.")
+            elif int(self.ez2onConditionComboBox.get()) <= 0 or int(self.ez2onConditionComboBox.get()) >= 12 :
+                msgbox.showerror("오류", "조건값은 1~11 사이여야 합니다.")
             elif int(self.ez2onRateEntry01.get()) <= -1 or int(self.ez2onRateEntry01.get()) >= 101 :
                 msgbox.showerror("오류", "RATE값이 잘못되었습니다.")
             elif int(self.ez2onRateEntry02.get()) <= -1 or int(self.ez2onRateEntry02.get()) >= 100 :
