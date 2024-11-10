@@ -44,24 +44,15 @@ def djmax_condition03(number_rate1, number_rate2):
         else:
             return '25.0000'
 
-def djmax_condition04(number_max100, number_max90, number_max80, number_max70, number_max60, number_max50, number_max40,
-                      number_max30, number_max20, number_max10, number_max1, number_break, number_best_combo):
-    total_notes = (number_max100 + number_max90 + number_max80 + number_max70 + number_max60 + number_max50
-                   + number_max40 + number_max30 + number_max20 + number_max10 + number_max1 + number_break)
-    total_notes_multiple = round(total_notes * 3.5)
-    if number_best_combo >= total_notes_multiple:
-        return '100.0000'
-    else:
-        return format(((number_best_combo / total_notes_multiple) * 100), ".4f")
+def djmax_condition04(number_rate1, number_rate2):
+    return format(abs(number_rate1 - number_rate2), ".4f")
 
 
 def djmax_condition05(number_break):
-    if number_break <= 0 or number_break > 14:
+    if number_break != 0:
         return '0.0000'
-    elif 0 < number_break <= 7:
-        return format((number_break / 7) * 100, ".4f")
     else:
-        return format((abs(14-number_break) / 7) * 100, ".4f")
+        return '100.0000'
 
 
 def djmax_condition06(number_break):
