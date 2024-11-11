@@ -286,7 +286,7 @@ class App(tk.Frame):
                     clipboard.copy(result)
                     self.ez2onResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 6:
-                    result = ez2on_condition06(number_miss, number_fail)
+                    result = ez2on_condition06(number_cool, number_good, number_miss, number_fail)
                     clipboard.copy(result)
                     self.ez2onResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 7:

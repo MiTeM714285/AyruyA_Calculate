@@ -65,28 +65,18 @@ def ez2on_condition05(number_maxcombo, number_kool, number_cool, number_good, nu
     else:
         return format(result, ".4f")
 
-def ez2on_condition06(number_miss, number_fail):
-    if number_miss + number_fail == 0:
+def ez2on_condition06(number_cool, number_good, number_miss, number_fail):
+    if number_cool + number_good + number_miss + number_fail == 0:
         return '100.0000'
-    elif number_miss + number_fail == 1:
-        return '90.0000'
-    elif number_miss + number_fail == 2:
+    elif number_cool + number_good + number_miss + number_fail == 1:
         return '80.0000'
-    elif number_miss + number_fail == 3:
-        return '70.0000'
-    elif number_miss + number_fail == 4:
+    elif number_cool + number_good + number_miss + number_fail == 2:
         return '60.0000'
-    elif number_miss + number_fail == 5:
-        return '50.0000'
-    elif number_miss + number_fail == 6:
+    elif number_cool + number_good + number_miss + number_fail == 3:
         return '40.0000'
-    elif number_miss + number_fail == 7:
-        return '30.0000'
-    elif number_miss + number_fail == 8:
+    elif number_cool + number_good + number_miss + number_fail == 4:
         return '20.0000'
-    elif number_miss + number_fail == 9:
-        return '10.0000'
-    elif number_miss + number_fail >= 10:
+    elif number_cool + number_good + number_miss + number_fail >= 5:
         return '0.0000'
 
 def ez2on_condition07(number_rate1, number_rate2):
