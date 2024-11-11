@@ -9,18 +9,9 @@ def ez2on_condition01(number_keymode):
         return '85.0000'
 
 
-def ez2on_condition02(number_maxcombo, number_kool, number_cool, number_good, number_miss, number_fail):
+def ez2on_condition02(number_kool, number_cool, number_good, number_miss, number_fail):
     total_notes = number_kool + number_cool + number_good + number_miss + number_fail
-    objective_notes = total_notes * 0.5
-
-    if number_maxcombo == 0:
-        return '0.0000'
-    elif number_maxcombo <= objective_notes:
-        return format((number_maxcombo / objective_notes) * 100, ".4f")
-    else:
-        subject = int((number_maxcombo - 2*(abs(number_maxcombo-objective_notes))))
-        return format((subject / objective_notes) * 100, ".4f")
-
+    return format(((number_kool*number_cool*number_good) / pow(total_notes / 3, 3))*100, ".4f")
 
 def ez2on_condition03(number_kool, number_cool):
     difference = abs(number_kool - number_cool)
