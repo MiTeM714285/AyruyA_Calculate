@@ -29,15 +29,30 @@ def ez2on_condition03(number_kool, number_cool, number_good, number_miss, number
 
     return format((diff_divided7_ratio + diff_divided3_ratio) / 2, ".4f")
 
-def ez2on_condition04(number_cool, number_good):
-    difference = abs(number_cool - number_good)
+def ez2on_condition04(number_maxcombo, number_kool, number_cool, number_good, number_miss, number_fail):
+    str_maxcombo = str(number_maxcombo)
+    str_kool = str(number_kool)
+    str_cool = str(number_cool)
+    str_good = str(number_good)
+    str_miss = str(number_miss)
+    str_fail = str(number_fail)
+    str_total = list(str_maxcombo+str_kool+str_cool+str_good+str_miss+str_fail)
+    count_seven = str_total.count("7")
 
-    if difference <= 0 or difference > 154:
-        return '0.0000'
-    elif difference <= 77:
-        return format((difference / 77) * 100, ".4f")
+    if count_seven >= 6:
+        return '100.0000'
+    elif count_seven == 5:
+        return '90.0000'
+    elif count_seven == 4:
+        return '80.0000'
+    elif count_seven == 3:
+        return '70.0000'
+    elif count_seven == 2:
+        return '60.0000'
+    elif count_seven == 1:
+        return '50.0000'
     else:
-        return format((abs(154 - difference) / 77) * 100, ".4f")
+        return '0.0000'
 
 def ez2on_condition05(number_rate1, number_rate2):
     total_rate = (number_rate1 + (number_rate2 / 100)) + 1.5
