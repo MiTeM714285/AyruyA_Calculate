@@ -282,7 +282,7 @@ class App(tk.Frame):
                     clipboard.copy(result)
                     self.ez2onResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 5:
-                    result = ez2on_condition05(number_rate1, number_rate2)
+                    result = ez2on_condition05(number_maxcombo, number_kool, number_cool, number_good, number_miss, number_fail)
                     clipboard.copy(result)
                     self.ez2onResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 6:
@@ -406,7 +406,7 @@ class App(tk.Frame):
 
 
 root = tk.Tk()
-root.title('SCF3rd - AyruyA의 리듬공방 현장이벤트 전용 프로그램')
+root.title('SCF3rd - AyruyA의 리듬공방 현장이벤트용 성과계산기')
 root.resizable(width=False, height=False)
 app = App(master=root)
 app.mainloop()

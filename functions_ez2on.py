@@ -54,12 +54,16 @@ def ez2on_condition04(number_maxcombo, number_kool, number_cool, number_good, nu
     else:
         return '0.0000'
 
-def ez2on_condition05(number_rate1, number_rate2):
-    total_rate = (number_rate1 + (number_rate2 / 100)) + 1.5
-    if total_rate >= 100:
+def ez2on_condition05(number_maxcombo, number_kool, number_cool, number_good, number_miss, number_fail):
+    judge_others = number_kool + number_good + number_miss + number_fail
+    result = ((number_cool - judge_others) / number_maxcombo) * 100
+    print(result)
+    if result < 0:
+        return '0.0000'
+    elif result >= 100:
         return '100.0000'
     else:
-        return format(total_rate, ".4f")
+        return format(result, ".4f")
 
 def ez2on_condition06(number_miss, number_fail):
     if number_miss + number_fail == 0:
