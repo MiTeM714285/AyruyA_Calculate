@@ -290,7 +290,7 @@ class App(tk.Frame):
                     clipboard.copy(result)
                     self.ez2onResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 7:
-                    result = ez2on_condition07(number_rate1, number_rate2)
+                    result = ez2on_condition07(number_maxcombo, number_kool)
                     clipboard.copy(result)
                     self.ez2onResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 8:

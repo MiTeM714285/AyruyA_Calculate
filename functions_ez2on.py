@@ -79,7 +79,19 @@ def ez2on_condition06(number_cool, number_good, number_miss, number_fail):
     elif number_cool + number_good + number_miss + number_fail >= 5:
         return '0.0000'
 
-def ez2on_condition07(number_rate1, number_rate2):
+def ez2on_condition07(number_maxcombo, number_kool):
+    list_number_maxcombo = list(str(number_maxcombo))
+    list_number_kool = list(str(number_kool))
+    reversed_list_number_maxcombo = ''.join(list(reversed(list_number_maxcombo)))
+    reversed_list_number_kool = ''.join(list(reversed(list_number_kool)))
+    print(reversed_list_number_maxcombo)
+    print(reversed_list_number_kool)
+    if (int(reversed_list_number_kool) / int(reversed_list_number_maxcombo)) * 100 >= 100:
+        return '100.0000'
+    else:
+        return format((int(reversed_list_number_kool) / int(reversed_list_number_maxcombo)) * 100, ".4f")
+
+def ez2on_condition08(number_rate1, number_rate2):
     number_rate = number_rate1 + number_rate2
     number_rate_split = list(number_rate)
     number_rate_split_int = [int(i) for i in number_rate_split]
@@ -93,7 +105,7 @@ def ez2on_condition07(number_rate1, number_rate2):
     else:
         return format((abs(36-number_rate_split_sum) / 18) * 100, ".4f")
 
-def ez2on_condition08(number_rate1, number_rate2):
+def ez2on_condition09(number_rate1, number_rate2):
     number_rate = number_rate1 + number_rate2
     number_rate_split = list(number_rate)
     number_rate_split_int = [int(i) for i in number_rate_split]
@@ -102,15 +114,7 @@ def ez2on_condition08(number_rate1, number_rate2):
 
     if number_rate_split_sum <= 0 or number_rate_split_sum > 36:
         return '0.0000'
-    elif number_rate_split_sum <= 24:
-        return format((number_rate_split_sum / 24) * 100, ".4f")
+    elif number_rate_split_sum <= 28:
+        return format((number_rate_split_sum / 28) * 100, ".4f")
     else:
-        return format((abs(48 - number_rate_split_sum) / 24) * 100, ".4f")
-
-def ez2on_condition09(number_fast, number_slow):
-    total = number_fast + number_slow
-    difference = abs(number_fast - number_slow)
-    if number_fast == 0 or number_slow == 0:
-        return "0.0000%"
-    else:
-        return format((100 - ((difference / total) * 100)), ".4f")
+        return format((abs(56 - number_rate_split_sum) / 28) * 100, ".4f")
