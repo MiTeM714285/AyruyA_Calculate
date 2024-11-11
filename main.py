@@ -264,12 +264,9 @@ class App(tk.Frame):
                 number_maxcombo = int(self.ez2onMaxComboEntry.get())
                 number_keymode = int(self.ez2onKeymodeComboBox.get())
                 number_condition = int(self.ez2onConditionComboBox.get())
-                number_fast = int(self.ez2onJudgeFastEntry.get())
-                number_slow = int(self.ez2onJudgeSlowEntry.get())
 
                 if number_condition == 1:
-                    result = ez2on_condition01(number_maxcombo, number_kool, number_cool,
-                                                          number_good, number_miss, number_fail)
+                    result = ez2on_condition01(number_keymode)
                     clipboard.copy(result)
                     self.ez2onResult.config(text="백분율 : " + result + "%")
                 elif number_condition == 2:
