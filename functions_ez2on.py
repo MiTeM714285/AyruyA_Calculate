@@ -13,15 +13,21 @@ def ez2on_condition02(number_kool, number_cool, number_good, number_miss, number
     total_notes = number_kool + number_cool + number_good + number_miss + number_fail
     return format(((number_kool*number_cool*number_good) / pow(total_notes / 3, 3))*100, ".4f")
 
-def ez2on_condition03(number_kool, number_cool):
-    difference = abs(number_kool - number_cool)
+def ez2on_condition03(number_kool, number_cool, number_good, number_miss, number_fail):
+    total_notes = number_kool + number_cool + number_good + number_miss + number_fail
+    total_notes_divided7 = round((total_notes / 10) * 7, 4)
+    total_notes_divided3 = round((total_notes / 10) * 3, 4)
+    number_others = number_cool + number_good + number_miss + number_fail
+    diff_divided7 = abs(total_notes_divided7 - number_kool)
+    diff_divided3 = abs(total_notes_divided3 - number_others)
+    print(diff_divided7)
+    print(diff_divided3)
+    diff_divided7_ratio = (abs(total_notes - diff_divided7) / total_notes) * 100
+    diff_divided3_ratio = (abs(total_notes - diff_divided3) / total_notes) * 100
+    print(diff_divided7_ratio)
+    print(diff_divided3_ratio)
 
-    if difference <= 0 or difference > 666:
-        return '0.0000'
-    elif difference <= 333:
-        return format((difference / 333) * 100, ".4f")
-    else:
-        return format((abs(666 - difference) / 333) * 100, ".4f")
+    return format((diff_divided7_ratio + diff_divided3_ratio) / 2, ".4f")
 
 def ez2on_condition04(number_cool, number_good):
     difference = abs(number_cool - number_good)
